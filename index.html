@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; font-size: 14px; font-family: system-ui, sans-serif; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<title>溫州公園合建說明</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap">
+<style>
+/* Layout: one page at a time behind a sticky, scrollable tab strip; each page = one-line key point, then plain details, deeper detail folded. Large type for elderly readers. */
+:root {
+  --bg: #f4f7f5;
+  --surface: #ffffff;
+  --ink: #18241f;
+  --muted: #4f5e58;
+  --line: #d3ddd8;
+  --pine: #1d5a47;
+  --pine-ink: #ffffff;
+  --pine-soft: #e2eee8;
+  --amber: #7a5100;
+  --amber-soft: #f8edd6;
+  --builder: #8a96a0;
+  --builder-soft: #e9edf0;
+  --font-display: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --font-body: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif;
+  --fs: 18px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111715; --surface: #18211e; --ink: #e5eee9; --muted: #a3b3ac; --line: #2c3a35;
+    --pine: #74c4a4; --pine-ink: #0d1a15; --pine-soft: #1c3a30;
+    --amber: #e7b765; --amber-soft: #382c15; --builder: #7d8a94; --builder-soft: #252d33;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111715; --surface: #18211e; --ink: #e5eee9; --muted: #a3b3ac; --line: #2c3a35;
+  --pine: #74c4a4; --pine-ink: #0d1a15; --pine-soft: #1c3a30;
+  --amber: #e7b765; --amber-soft: #382c15; --builder: #7d8a94; --builder-soft: #252d33;
+  color-scheme: dark;
+}
+html.big { --fs: 21px; }
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: var(--fs); line-height: 1.8;
+}
+.wrap {
+  max-width: 820px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+header.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.brandrow { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px 6px; }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 1.05em; line-height: 1.3; min-width: 0; }
+.brand small { display: block; font-family: var(--font-body); font-weight: 400; font-size: 0.72em; color: var(--muted); }
+.sizebtn {
+  flex: none; font: inherit; font-size: 0.85em; font-weight: 500;
+  border: 1.5px solid var(--pine); color: var(--pine); background: var(--surface);
+  border-radius: 999px; padding: 4px 14px; cursor: pointer;
+}
+nav.tabs { overflow-x: auto; scrollbar-width: thin; }
+nav.tabs ol { list-style: none; margin: 0; padding: 0 0 10px; display: flex; gap: 6px; width: max-content; }
+nav.tabs a {
+  display: block; padding: 4px 12px; border-radius: 8px; text-decoration: none;
+  color: var(--muted); font-size: 0.85em; white-space: nowrap; border: 1px solid transparent;
+}
+nav.tabs a[aria-current="page"] { background: var(--pine); color: var(--pine-ink); font-weight: 700; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--pine); outline-offset: 2px; }
+
+main { padding-block: 24px 40px; }
+section[data-page] { display: grid; gap: 20px; }
+h1 { font-family: var(--font-display); font-size: 1.75em; line-height: 1.35; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--font-display); font-size: 1.25em; line-height: 1.4; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.eyebrow { font-size: 0.8em; color: var(--muted); letter-spacing: 0.08em; }
+.key {
+  background: var(--pine-soft); border-left: 5px solid var(--pine); border-radius: 0 10px 10px 0;
+  padding: 14px 18px; font-size: 1.1em; font-weight: 700; line-height: 1.6;
+}
+.cite { color: var(--muted); font-size: 0.8em; font-weight: 400; white-space: nowrap; }
+.block { display: grid; gap: 10px; }
+ul.plain, ol.plain { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; }
+.note {
+  background: var(--amber-soft); color: var(--ink); border-radius: 10px; padding: 10px 14px; font-size: 0.9em;
+}
+.note b { color: var(--amber); }
+details {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0 16px;
+}
+details > summary {
+  cursor: pointer; padding-block: 12px; font-weight: 700; color: var(--pine); list-style: none;
+}
+details > summary::-webkit-details-marker { display: none; }
+details > summary::before { content: "＋ "; }
+details[open] > summary::before { content: "－ "; }
+details > .inner { padding-bottom: 16px; display: grid; gap: 10px; }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.92em; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; font-size: 0.9em; }
+td.num { text-align: right; white-space: nowrap; }
+
+/* home */
+.hero { display: grid; gap: 14px; padding-block: 8px 4px; }
+.hero h1 { font-size: 2em; }
+.stage { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--pine); }
+.stage::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--pine); box-shadow: 0 0 0 4px var(--pine-soft); }
+.three { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.three > div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: grid; gap: 4px; align-content: start; }
+.three .lbl { font-family: var(--font-display); font-weight: 700; color: var(--pine); font-size: 0.95em; }
+.three b { font-size: 1.1em; }
+.three > div { gap: 6px; }
+.hero .sub { font-family: var(--font-display); font-size: 1.2em; font-weight: 600; color: var(--pine); text-wrap: balance; }
+.three .cite { white-space: normal; }
+.pagegrid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.pagegrid a {
+  display: grid; gap: 2px; text-decoration: none; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px;
+}
+.pagegrid a b { color: var(--pine); }
+.pagegrid a span { color: var(--muted); font-size: 0.85em; }
+.contact { background: var(--surface); border: 2px solid var(--pine); border-radius: 12px; padding: 16px 18px; display: grid; gap: 6px; }
+.contact .row { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+
+/* site diagram + floors */
+figure { margin: 0; display: grid; gap: 8px; }
+figure svg { width: 100%; height: auto; display: block; }
+figcaption { font-size: 0.82em; color: var(--muted); }
+img.plan { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid var(--line); background: #ffffff; }
+.floors { display: grid; gap: 3px; max-width: 460px; }
+.fl { display: grid; grid-template-columns: 4.2em 1fr; gap: 10px; align-items: stretch; font-size: 0.86em; }
+.fl .lab { color: var(--muted); text-align: right; align-self: center; font-variant-numeric: tabular-nums; }
+.fl .bar { border-radius: 6px; padding: 4px 12px; }
+.fl.owner .bar { background: var(--pine-soft); border: 1.5px solid var(--pine); }
+.fl.builder .bar { background: var(--builder-soft); border: 1.5px dashed var(--builder); }
+.fl.ground .bar { background: var(--amber-soft); border: 1.5px solid var(--amber); }
+.fl.base .bar { background: var(--surface); border: 1.5px solid var(--line); }
+.fl.gap { height: 8px; }
+
+/* formula cards */
+.src { display: grid; gap: 10px; }
+.src > div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; display: grid; gap: 4px; }
+.src .tag { font-family: var(--font-display); font-weight: 700; color: var(--pine); }
+.formula { font-variant-numeric: tabular-nums; background: var(--bg); border-radius: 8px; padding: 6px 10px; font-size: 0.92em; overflow-x: auto; }
+
+/* process */
+ol.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: s; }
+ol.steps > li { counter-increment: s; display: grid; grid-template-columns: 2.4em 1fr; gap: 12px; position: relative; padding-bottom: 18px; }
+ol.steps > li::before {
+  content: counter(s); width: 2.2em; height: 2.2em; border-radius: 50%; display: grid; place-items: center;
+  background: var(--surface); border: 2px solid var(--line); font-weight: 700; color: var(--muted); font-size: 0.9em; z-index: 1;
+}
+ol.steps > li::after { content: ""; position: absolute; left: calc(1.1em - 1px); top: 2.2em; bottom: 0; width: 2px; background: var(--line); }
+ol.steps > li:last-child::after { display: none; }
+ol.steps > li.now::before { background: var(--pine); border-color: var(--pine); color: var(--pine-ink); }
+ol.steps .t { font-weight: 700; }
+ol.steps .you { color: var(--muted); font-size: 0.9em; }
+ol.steps .stagebox { display: grid; gap: 6px; min-width: 0; }
+ol.steps .stagebox .you { color: var(--pine); font-weight: 500; }
+ol.steps .flag { display: inline-block; font-size: 0.78em; font-weight: 700; border-radius: 6px; padding: 0 8px; margin-left: 6px; vertical-align: 2px; }
+.flag.now { background: var(--pine); color: var(--pine-ink); }
+.flag.money { background: var(--amber-soft); color: var(--amber); }
+.flag.date { background: var(--pine-soft); color: var(--pine); }
+
+/* faq */
+.faq { display: grid; gap: 8px; }
+
+.pager { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 8px; border-top: 1px solid var(--line); }
+.pager a { color: var(--pine); font-weight: 700; text-decoration: none; padding: 8px 0; }
+footer { border-top: 1px solid var(--line); padding-block: 18px 28px; color: var(--muted); font-size: 0.8em; display: grid; gap: 4px; }
+@media (prefers-reduced-motion: no-preference) {
+  section[data-page]:not([hidden]) { animation: rise .25s ease-out; }
+  @keyframes rise { from { transform: translateY(6px); } to { transform: none; } }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brandrow">
+      <div class="brand">溫州公園旁・羅斯福路三段 283 巷<small>都市更新協議合建　住戶說明</small><small>本網站僅供溫州公園案住戶參閱</small></div>
+      <button class="sizebtn" id="sizebtn" type="button" aria-pressed="false">字放大</button>
+    </div>
+    <nav class="tabs" aria-label="頁面">
+      <ol>
+        <li><a href="#home">首頁</a></li>
+        <li><a href="#site">基地與現況</a></li>
+        <li><a href="#building">未來的大樓</a></li>
+        <li><a href="#share">分回怎麼算</a></li>
+        <li><a href="#shop">一樓店面</a></li>
+        <li><a href="#parking">車位</a></li>
+        <li><a href="#move">搬遷與補貼</a></li>
+        <li><a href="#trust">信託與保障</a></li>
+        <li><a href="#process">流程與作業</a></li>
+        <li><a href="#tax">稅費</a></li>
+        <li><a href="#faq">常見問題</a></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- 1 首頁 -->
+<section data-page="home">
+  <div class="hero">
+    <span class="stage">目前階段：整合簽約中</span>
+    <h1>溫州公園旁·50年老屋華麗轉身</h1>
+    <p class="sub">攜手 32 戶鄰居，打造大安區精品耐震電梯地標</p>
+    <p>這座承載大家 50 年回憶的四層樓社區，預計由 32 戶地主攜手吉美建設，共同打造為地上 14 層、地下 4 層的全新鋼筋混凝土（RC）耐震電梯大樓。讓長輩輕鬆上下樓，為家人換上一座安全、舒適的現代美學家園。</p>
+  </div>
+  <div class="block">
+    <h2>開啟改建之前，為您把關的【三大安心承諾】</h2>
+    <div class="three">
+      <div><span class="lbl">【零興建負擔】</span><b>建商全額出資</b><span>蓋新房子的所有工程費用與營造成本均由吉美建設負擔，地主完全不需要掏錢出興建費，輕鬆換新家。</span><span class="cite">（稅費與找補請見「稅費」與「分回怎麼算」章節說明）（參照契約第 3 條第 2 項）</span></div>
+      <div><span class="lbl">【資產抗通膨】</span><b>分回比例簽約即確定</b><span>您的分回比例與分配原則，在簽約時就已確定！未來無論物價、工資或建材如何上漲，都不會因此調整您的分回比例。</span><span class="cite">（政府法令及不可抗力因素除外；實際坪數依政府核定獎勵值為準）（參照契約第 4 條第 9 項）</span></div>
+      <div><span class="lbl">【產權最高安全】</span><b>銀行信託專款專用</b><span>本案實施「不動產與資金雙重信託」，資金由專案專戶獨立控管，且合約明訂建商絕不能拿地主的土地去辦理融資貸款，產權安全無後顧之憂。</span><span class="cite">（參照契約第 6 條）</span></div>
+    </div>
+  </div>
+  <div class="block">
+    <h2>您想了解什麼？</h2>
+    <div class="pagegrid">
+      <a href="#share"><b>我會分回多少？</b><span>分回怎麼算</span></a>
+      <a href="#move"><b>什麼時候搬？有哪些補貼？</b><span>搬遷與補貼</span></a>
+      <a href="#trust"><b>我的產權安全嗎？</b><span>信託與保障</span></a>
+      <a href="#process"><b>接下來要做什麼？</b><span>流程與作業</span></a>
+      <a href="#building"><b>會蓋成什麼樣子？</b><span>未來的大樓</span></a>
+      <a href="#faq"><b>我還有其他問題</b><span>常見問題</span></a>
+    </div>
+  </div>
+  <div class="contact" id="contact">
+    <h2>歡迎預約專人說明</h2>
+    <p>您的分回明細、補貼金額，都會由專人為您說明，家人可以一起來。</p>
+  </div>
+</section>
+
+<!-- 2 基地與現況 -->
+<section data-page="site" hidden>
+  <div><p class="eyebrow">基地與現況</p><h1>範圍是溫州公園北側的 5 筆土地、4 棟公寓</h1></div>
+  <p class="key">4 棟建物都在民國 63 年 2 月 15 日以前取得使用執照，直接適用防災型都更獎勵。</p>
+  <figure>
+    <svg viewBox="0 0 640 430" role="img" aria-label="基地門牌示意：四棟公寓位於 283 巷、9 弄與 19 弄之間，南面溫州公園">
+      <rect x="0" y="0" width="640" height="430" fill="var(--bg)"/>
+      <!-- streets -->
+      <rect x="40" y="20" width="470" height="34" fill="var(--line)"/>
+      <text x="275" y="42" text-anchor="middle" font-size="14" fill="var(--muted)">283 巷 19 弄（6 公尺）</text>
+      <rect x="510" y="20" width="44" height="340" fill="var(--line)"/>
+      <text x="532" y="200" text-anchor="middle" font-size="14" fill="var(--muted)" transform="rotate(90 532 200)">283 巷（8 公尺）</text>
+      <rect x="40" y="326" width="470" height="34" fill="var(--line)"/>
+      <text x="275" y="348" text-anchor="middle" font-size="14" fill="var(--muted)">283 巷 9 弄（8 公尺）</text>
+      <rect x="40" y="370" width="514" height="44" rx="8" fill="var(--pine-soft)" stroke="var(--pine)" stroke-width="1.5"/>
+      <text x="297" y="398" text-anchor="middle" font-size="16" font-weight="700" fill="var(--pine)">溫州公園</text>
+      <!-- base outline -->
+      <path d="M200 62 H500 V318 H120 L140 230 Z" fill="none" stroke="var(--pine)" stroke-width="2.5" stroke-dasharray="7 5"/>
+      <!-- buildings -->
+      <g>
+        <rect x="210" y="70" width="140" height="120" rx="6" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="280" y="122" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">19 弄 1、3 號</text>
+        <text x="280" y="146" text-anchor="middle" font-size="13" fill="var(--muted)">四層樓</text>
+      </g>
+      <g>
+        <rect x="360" y="70" width="136" height="120" rx="6" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="428" y="122" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">15、17 號</text>
+        <text x="428" y="146" text-anchor="middle" font-size="13" fill="var(--muted)">四層樓</text>
+      </g>
+      <g>
+        <rect x="360" y="198" width="136" height="114" rx="6" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="428" y="248" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">11、13 號</text>
+        <text x="428" y="272" text-anchor="middle" font-size="13" fill="var(--muted)">四層樓</text>
+      </g>
+      <g>
+        <rect x="150" y="238" width="202" height="74" rx="6" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="251" y="270" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">9 弄 1、3 號</text>
+        <text x="251" y="292" text-anchor="middle" font-size="13" fill="var(--muted)">四層樓</text>
+      </g>
+      <text x="572" y="34" font-size="13" fill="var(--muted)">北 ↑</text>
+    </svg>
+    <figcaption>門牌示意圖（不依比例）。虛線為合建基地範圍。</figcaption>
+  </figure>
+  <ul class="plain">
+    <li>地號：大安區龍泉段一小段 848、849、850、851、852，合計約 421.69 坪</li>
+    <li>門牌：羅斯福路三段 283 巷 11、13、15、17 號；283 巷 9 弄 1、3 號；283 巷 19 弄 1、3 號</li>
+    <li>現況：4 棟四層樓，民國 56 至 62 年取得使用執照，共 32 戶，都沒有電梯</li>
+    <li>使用分區：第三種住宅區</li>
+    <li>三面臨路，南面正對溫州公園</li>
+  </ul>
+</section>
+
+<!-- 3 未來的大樓 -->
+<section data-page="building" hidden>
+  <div><p class="eyebrow">未來的大樓</p><h1>預計地上 14 層、地下 4 層的電梯大樓</h1></div>
+  <p class="key">實際樓層與設計，以政府核准的建造執照為準。<span class="cite">契約第 3 條第 2 項</span></p>
+  <ul class="plain">
+    <li>可蓋的總面積，是現在法定可蓋面積的 2 倍（加上都更獎勵、防災型都更獎勵與容積移轉）</li>
+    <li>一樓：店面與大廳</li>
+    <li>二樓以上：住宅</li>
+    <li>地下室：停車場</li>
+    <li>規劃申請耐震設計標章、綠建築與智慧建築認證、無障礙設計</li>
+  </ul>
+  <figure>
+    <img class="plan" src="plan-1f.jpg" alt="一樓平面示意圖：南側臨 9 弄，東側臨 283 巷，一樓為店面與大廳，西側為地下室車道" width="835" height="790">
+    <figcaption>一樓平面示意圖</figcaption>
+  </figure>
+  <figure>
+    <img class="plan" src="plan-typical.jpg" alt="住宅標準層坪型配置示例一：大坪數為主，每層戶數較少，圍繞中央的電梯與樓梯" width="835" height="790">
+    <figcaption>住宅標準層　坪型配置示例一（大坪數為主）</figcaption>
+  </figure>
+  <figure>
+    <img class="plan" src="plan-typical-2.jpg" alt="住宅標準層坪型配置示例二：小坪數為主，每層戶數較多，圍繞中央的電梯與樓梯" width="835" height="790">
+    <figcaption>住宅標準層　坪型配置示例二（小坪數為主）</figcaption>
+  </figure>
+  <p class="note">平面圖為初步設計示意。兩種坪型配置只是示例，實際戶別與各戶面積，會依住戶需求再調整。</p>
+  <div class="block">
+    <h2>未來新大樓的「建材品質」與「保固服務」如何保障？</h2>
+    <p class="key">完全比照公開銷售的建材規格，享完整結構保固！</p>
+    <ol class="plain">
+      <li><b>對標銷售戶規格：</b>本案位處大安區優質地段，建材與設備完全比照未來公開銷售戶之合約及廣告海報建材表，地主戶與銷售戶採用相同規格，打造區域品質地標！</li>
+      <li><b>雙重安全品質把關：</b>建材品質與效用絕不低於都更計畫標準；混凝土氯離子含量與鋼筋輻射劑量，均符合國家安全標準。</li>
+      <li><b>安心長期保固：</b>提供結構體 15 年保固（自取得使用執照日起算）及設備 1 年保固（自交屋日起算），讓您住得既舒適又放鬆安心。</li>
+    </ol>
+    <p class="cite">參照契約第 8 條第 1 項、第 12 條</p>
+  </div>
+</section>
+
+<!-- 4 分回怎麼算 -->
+<section data-page="share" hidden>
+  <div><p class="eyebrow">分回怎麼算</p><h1>我的房屋分回坪數是怎麼算出來的？選樓層會影響我的權益嗎？</h1></div>
+  <p class="key">全案 32 戶採用完全相同的公平公式，您的資產「總價值」簽約後即固定，選高樓層或大坪數由您自由決定！</p>
+  <div class="block">
+    <h2>1. 公平原則：全案同公式，透明無黑箱</h2>
+    <p>全社區 32 戶均採用完全相同的算式計算分回面積，唯一的差別僅在於每戶原本的「土地持分大小」。</p>
+  </div>
+  <div class="block">
+    <h2>2. 樓層分工與選屋彈性</h2>
+    <ul class="plain">
+      <li><b>樓層分配：</b>本案由地主優先由 2 樓往上連續選擇（約至 9 樓），享優質居住環境；建商則由頂樓往下分配。<span class="cite">契約第 4 條第 2 項</span></li>
+      <li><b>價值固定，自由選屋：</b>每戶分回的是一個「固定的總價值」，就像擁有固定額度的選屋點數：
+        <ul class="plain">
+          <li>若您喜歡景觀，選擇高樓層（單價較高），換算的坪數會稍微精緻一些。</li>
+          <li>若您偏好大空間，選擇低樓層（單價較親民），就能換到更大的生活坪數。</li>
+        </ul>
+      </li>
+    </ul>
+    <figure>
+      <div class="floors" aria-label="樓層分配示意">
+        <div class="fl builder"><span class="lab">10–14F</span><span class="bar">建商分配</span></div>
+        <div class="fl owner"><span class="lab">2–9F</span><span class="bar"><b>地主分配範圍（約）</b>　價值固定，自選樓層</span></div>
+        <div class="fl ground"><span class="lab">1F</span><span class="bar">店面與大廳（見「一樓店面」）</span></div>
+        <div class="fl gap"></div>
+        <div class="fl base"><span class="lab">B1–B4</span><span class="bar">停車場</span></div>
+      </div>
+      <figcaption>示意圖，實際以建築設計定案及分屋結果為準。</figcaption>
+    </figure>
+  </div>
+  <div class="block">
+    <h2>3. 分回坪數的三大來源（地主享 62% 分回比）</h2>
+    <p>您分回的每一坪都有明確的法規與契約依據（以土地持分 × 225% 住三容積為基準）：</p>
+    <div class="src">
+      <div><span class="tag">【A】法定容積</span><span>土地原本依法能蓋的基礎坪數，地主分回 62%。</span></div>
+      <div><span class="tag">【B】都更獎勵</span><span>團隊全力爭取的「都更獎勵＋防災型都更獎勵」，地主同樣分回 62%。</span></div>
+      <div><span class="tag">【C】容積移轉回饋</span><span>建商自行出資購買公共設施保留地移入的容積，特別額外提撥 10% 無償回饋給全體地主，依各戶土地持分比例分配！<span class="cite">契約第 4 條第 1 項第 3 款</span></span></div>
+    </div>
+    <details>
+      <summary>看計算公式與一個虛構的例子</summary>
+      <div class="inner">
+        <div class="formula">【A】土地持分坪數 × 225% × 1.58 × 62%</div>
+        <div class="formula">【B】土地持分坪數 × 225% × 1.58 × 78.85% × 62%</div>
+        <div class="formula">【C】容積移轉總面積 × 10% × 您的土地持分 ÷ 全案基地面積</div>
+        <p>以下是<b>虛構</b>的例子，不是本案任何一戶。假設土地持分 10 坪：</p>
+        <div class="tablewrap"><table>
+          <thead><tr><th>來源</th><th>計算</th><th style="text-align:right">坪數</th></tr></thead>
+          <tbody>
+            <tr><td>A 法定容積</td><td>10 × 225% × 1.58 × 62%</td><td class="num">22.04</td></tr>
+            <tr><td>B 都更獎勵</td><td>10 × 225% × 1.58 × 78.85% × 62%</td><td class="num">17.38</td></tr>
+            <tr><td>C 容積移轉回饋</td><td>317.06 × 10% × 10 ÷ 421.69</td><td class="num">0.75</td></tr>
+            <tr><td><b>合計</b></td><td></td><td class="num"><b>40.17</b></td></tr>
+          </tbody>
+        </table></div>
+        <p>1.58 是「建築係數」，用來把容積換算成含公設的面積。</p>
+      </div>
+    </details>
+  </div>
+  <p class="note"><b>哪些數字要看政府核准：</b>A 依法定容積計算；B 依都更與防災型都更獎勵的核准值；C 依容積移轉是否完成。實際坪數以未來核定的獎勵值及規劃為準。</p>
+  <p class="cite" style="white-space:normal">備註：選屋時實際坪數與應分坪數若有微幅差額，以不超過 10% 為原則，於分屋時依訂價互相找補。參照契約第 4 條第 5 項。</p>
+  <div class="contact">
+    <h2>您的分配明細</h2>
+    <p>請見您的合建契約附件一「分配試算」。<a href="#contact" data-go="home">歡迎預約專人說明</a>。</p>
+  </div>
+</section>
+
+<!-- 5 一樓店面 -->
+<section data-page="shop" hidden>
+  <div><p class="eyebrow">一樓店面</p><h1>原一樓戶優先分回一樓店面，並有保底面積</h1></div>
+  <p>適用對象：283 巷 11、13、15、17 號及 283 巷 9 弄 1、3 號的一樓所有權人。</p>
+  <ol class="plain">
+    <li>優先分回原位次、原方向的店面。</li>
+    <li>保底面積：原一樓面積占原全部一樓面積的比例，乘以更新後一樓的面積。</li>
+    <li>有一樓戶放棄一樓面積時，其他一樓戶可以協調取得該部分的權利。</li>
+    <li>分完一樓店面後，剩餘面積乘以 1.2 倍，換到 2 樓以上。<span class="cite">契約第 4 條第 2 項第 2 款</span></li>
+  </ol>
+  <p>283 巷 19 弄 1、3 號一樓：依地主分配範圍「上一層樓」的平均單價，核算分得的價值。<span class="cite">契約第 4 條第 2 項第 2 款</span></p>
+  <p class="note">一樓店面怎麼切分，會在確認各一樓戶的需求後再規劃。</p>
+</section>
+
+<!-- 6 車位 -->
+<section data-page="parking" hidden>
+  <div><p class="eyebrow">車位</p><h1>車位該怎麼選配？選不選車位會影響我的房屋坪數嗎？</h1></div>
+  <p class="key">完全不影響，請您放心！本案的「房屋價值」與「車位價值」是各自獨立計算的，因此不論您是否選配車位，都絕對不會影響您房屋原本可分回的坪數與價值。</p>
+  <p>為了確保社區全體 32 戶鄰居都能平等享有良好的停車空間，本案規劃以原戶別為基準，每戶保障最多選配 1 個平面車位（若未來房屋有分戶規劃，選配資格仍以原 32 戶為計算基準）。</p>
+  <p>在車位位置的選擇上，我們會先協助地主們進行和諧溝通與協商；若遇到心儀位置重疊時，再透過公開公正的抽籤方式確定，過程絕對透明，讓大家選得安心又開心！<span class="cite">參照契約第 4 條第 2 項第 3 款</span></p>
+  <figure>
+    <img class="plan" src="plan-parking.jpg" alt="地下室停車示意圖：車道由西側坡道進出，車位沿外牆與中央排列" width="835" height="790">
+    <figcaption>地下室停車示意圖（初步設計，實際車位數量與位置以核准圖說為準）</figcaption>
+  </figure>
+</section>
+
+<!-- 7 搬遷與補貼 -->
+<section data-page="move" hidden>
+  <div><p class="eyebrow">搬遷與補貼</p><h1>改建期間的「搬家」與「租金補貼」怎麼安排？</h1></div>
+  <p class="key">團隊提供完整安居補貼與清運協助，讓您輕鬆搬遷、無後顧之憂！</p>
+  <div class="block">
+    <h2>1. 搬家無壓力：提早預告、清運免煩惱</h2>
+    <ul class="plain">
+      <li><b>時間充裕提早預告：</b>雖然合約約定點交期為通知後 3 個月內，但團隊實務上會於拆遷半年前提早預告進度，讓您與家人有充裕時間安排新居或租約。</li>
+      <li><b>舊屋清運免費處理：</b>搬家時您只需帶走珍貴物品與個人所需；其餘帶不走的大型舊傢俱或廢棄物，均由團隊免費協助清運與拆除，費用全由建商負擔，不用辛苦清空！點交後留下的物品視為您已放棄，請務必先帶走重要物品。</li>
+    </ul>
+  </div>
+  <div class="block">
+    <h2>2. 雙重安居補貼：搬家有津貼，月月有租金</h2>
+    <ul class="plain">
+      <li><b>搬遷安心津貼：</b>每戶提供一次性 5 萬元搬遷補助，補貼您搬家與整理費用。</li>
+      <li><b>每月安居租金補貼：</b>自騰空點交完成日起，至新家完工通知交屋為止，每月定額補助，依原建物權狀坪數計算：
+        <ul class="plain">
+          <li>一樓店面／住家：每坪每月 1,900 元～2,000 元（依門牌位置區分，見下表）</li>
+          <li>二樓以上：每坪每月 1,000 元（例如：權狀 30 坪，每月即可固定領取 3 萬元補貼！）</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="tablewrap"><table>
+      <thead><tr><th>位置</th><th style="text-align:right">每坪每月</th></tr></thead>
+      <tbody>
+        <tr><td>283 巷 11、13、15、17 號及 9 弄 1、3 號一樓</td><td class="num">2,000 元</td></tr>
+        <tr><td>283 巷 19 弄 1、3 號一樓</td><td class="num">1,900 元</td></tr>
+        <tr><td>二樓以上</td><td class="num">1,000 元</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="block">
+    <h2>3. 自動匯款，精準到位</h2>
+    <p>租金補貼於每月月初定期匯入您指定的銀行帳戶；若點交或交屋當月未滿一整個月，也會精確按實際天數計算補貼金額，保障您的生活資金流暢。</p>
+    <p class="cite">參照契約第 3 條第 4 項、第 4 條第 7 項、第 10 條第 6 項</p>
+  </div>
+  <details>
+    <summary>沒有產權的增建部分怎麼補貼</summary>
+    <div class="inner">
+      <p>一樓平台、庭院、陽台、從一樓室內進入的地下室、頂樓增建（需有屋頂及牆面），依實測坪數，每坪一次補貼 5 萬元。</p>
+      <p>從公用樓梯進入的地下室空間不列入補貼。</p>
+    </div>
+  </details>
+</section>
+
+<!-- 8 信託與保障 -->
+<section data-page="trust" hidden>
+  <div><p class="eyebrow">信託與保障</p><h1>資產安全與權益保障：不動產與資金雙重信託</h1></div>
+  <p class="key">為保障地主資產安全，本案設置嚴密的金融防護機制與專用印章管理規範，讓您安心參與改建：</p>
+  <div class="block">
+    <h2>❶ 不動產與資金「雙重信託」，由銀行與建經公司共同把關</h2>
+    <ul class="plain">
+      <li><b>建商不得抵押您的土地：</b>合約明訂，建商絕不能拿地主的土地去辦理融資貸款或設定抵押權，確保您的資產產權獨立安全。</li>
+      <li><b>辦理時間：</b>都市更新事業計畫核定後、拆屋前，依通知與受託銀行及建經公司完成信託簽約，專人全程協助。</li>
+      <li><b>專款專用與工程查核：</b>興建資金與預收款一律存入銀行獨立信託專戶，由銀行與建築經理公司（建經）進行財務稽核，嚴格依據工程實質進度查核後始予撥款，絕不挪作他用。</li>
+      <li><b>安心續建機制與費用全包：</b>信託合約內建「未完成工程續建機制」，確保建案能順利完成；相關信託管理費用全數由建商負擔，地主不需額外支付（個人貸款或轉貸之費用依約由地主負擔）。</li>
+    </ul>
+  </div>
+  <p class="cite" style="white-space:normal">參照契約第 6 條第 1、2、4、5、6 項</p>
+</section>
+
+<!-- 9 流程與時程 -->
+<section data-page="process" hidden>
+  <div><p class="eyebrow">流程與作業</p><h1>從簽約到煥然一新：四大階段，陪您穩健走向新家</h1></div>
+  <p class="key">本案從簽約推動到順利交屋，團隊會全程為您把關。您只需在關鍵節點配合簡單的行政手續，其餘繁雜的政府審議與施工品質均由吉美專業團隊為您服務！</p>
+  <ol class="steps">
+    <li class="now"><div class="stagebox"><span class="t">階段一：攜手立約與精心規劃<span class="flag now">現在進行中</span></span>
+      <ul class="plain">
+        <li><b>展現誠意爭取獎勵：</b>團隊將全力於 2029 年 3 月 28 日前完成都市更新事業計畫送件，為全體地主爭取「防災型都更獎勵」容積！依合約約定，事業計畫需於此日期前送件；若未能如期送件且雙方未協議展期，合建契約將自動失效，因此團隊會全力把握時程。</li>
+        <li><b>打造理想家園：</b>舉辦設計說明會與公聽會，並由專業估價單位計算各樓層單價，進行公開透明的意願調查與選屋作業。</li>
+      </ul>
+      <span class="you">地主輕鬆配合：了解合約內容並簽署合建契約與都更同意書，踴躍參與說明會與選屋。</span></div></li>
+    <li><div class="stagebox"><span class="t">階段二：政府審議與產權信託<span class="flag date">資產安全有保障</span></span>
+      <ul class="plain">
+        <li><b>審議公告：</b>事業計畫送主管機關審議核定並依法公告。</li>
+        <li><b>信託安全防護網：</b>都更核定後、拆屋前，由受託銀行與建經公司辦理信託簽約，確保產權與建案資金專款專用。</li>
+      </ul>
+      <span class="you">地主輕鬆配合：依通知備妥相關證件，在專人協助下完成信託契約簽署與用印。</span></div></li>
+    <li><div class="stagebox"><span class="t">階段三：安心搬遷與精緻施工<span class="flag money">月月租金補貼</span></span>
+      <ul class="plain">
+        <li><b>提早通知好準備：</b>取得建造執照後申報開工，團隊會提早預告點交時間，並發放 5 萬元搬遷津貼與每月定額租金補貼（自動匯入指定帳戶）。</li>
+        <li><b>舊屋免煩惱：</b>提供免費大型廢棄物清運，讓您無後顧之憂輕鬆搬遷。</li>
+      </ul>
+      <span class="you">地主輕鬆配合：安心搬遷點交，按月領取安居租金補貼。</span></div></li>
+    <li><div class="stagebox"><span class="t">階段四：品質驗收與歡喜交屋<span class="flag date">開啟美好新生活</span></span>
+      <ul class="plain">
+        <li><b>嚴謹驗收品質把關：</b>取得使用執照後進行面積微調找補，團隊將安排專人陪同您進行會同驗屋，確保各項細節改善完善。</li>
+        <li><b>歡喜領鑰匙：</b>完成驗收手續並點交鑰匙，租金補貼發放至通知交屋日止；並享有結構體 15 年（自使用執照核發日起算）、設備 1 年（自交屋日起算）的長期保固承諾！</li>
+      </ul>
+      <span class="you">地主輕鬆配合：隨專人會同驗收新家，確認無誤後開開心心搬入新居！</span>
+      <p class="note"><b>專人服務與權益小提醒：</b>依合約第 11 條規範，收到通知後需於 15 天內完成會同驗屋（超過 15 天未會勘將視同完成交屋）。請您完全放心，團隊專人會主動提前與您聯繫並排定行程，確保您的驗屋權益獲得最完善的照顧！</p></div></li>
+  </ol>
+  <p class="cite" style="white-space:normal">參照契約第 3 條、第 4 條、第 6 條、第 10 條、第 11 條、第 12 條</p>
+</section>
+
+<!-- 10 稅費 -->
+<section data-page="tax" hidden>
+  <div><p class="eyebrow">稅費</p><h1>改建過程中，相關的「稅捐與規費」該如何負擔？</h1></div>
+  <p class="key">建商全額負擔大筆工程與信託費用，並由團隊主動為您申請政府都更稅費減免！</p>
+  <p>重建期間的稅費安排遵循「權益對等、公開透明」原則，絕無隱藏費用：</p>
+  <div class="block">
+    <h2>1. 【建商全額負擔】（您不需支付任何費用）</h2>
+    <ul class="plain">
+      <li><b>工程與設施規費：</b>新大樓的瓦斯內外管工程費、社區法定公共基金（提撥給未來管委會），以及整體信託管理費用，均由建商全額吸收負擔。</li>
+    </ul>
+  </div>
+  <div class="block">
+    <h2>2. 【享政府都更減免＋建商主動代申辦】</h2>
+    <ul class="plain">
+      <li><b>房屋稅、地價稅、土地增值稅及契稅：</b>都市更新依法享有稅捐減免優惠！合約明確約定，上述稅捐依法可申請之減免，均由團隊免費代為向政府機關提出申辦，幫您把關省荷包。減免後仍需繳納的土地增值稅（土地過戶前）與契稅，依約由地主負擔。</li>
+      <li><b>興建期負擔：</b>舊屋拆除後的房屋稅停止課徵；過戶前的地價稅由地主負擔；土地過戶或使照取得後的房屋稅與地價稅，則依各自分得房地比例各自負擔。</li>
+    </ul>
+  </div>
+  <div class="block">
+    <h2>3. 【個人資產與產權登記規費】</h2>
+    <ul class="plain">
+      <li><b>產權登記與管理費：</b>地政規費、代書費、印花稅、水電費及未來社區管理費等，由雙方按分回房屋面積比例各自負擔。</li>
+      <li><b>個人財產稅務：</b>個人專屬之遺產稅、贈與稅、繼承相關稅務，以及依營業稅法進行房地互易時開立憑證之營業稅，由地主自行負擔。</li>
+    </ul>
+  </div>
+  <p class="cite" style="white-space:normal">參照契約第 6 條第 6 項、第 7 條</p>
+</section>
+
+<!-- 11 常見問題 -->
+<section data-page="faq" hidden>
+  <div><p class="eyebrow">常見問題</p><h1>大家最常問的 14 個問題</h1></div>
+  <div class="faq">
+    <details><summary>我要出錢嗎？</summary><div class="inner"><p>蓋房子的費用由建商負擔。地主需要自付的是自己的稅費（見「稅費」）、分回面積超過應分面積的找補款，以及自己要求的室內變更費用。</p></div></details>
+    <details><summary>物價上漲，我分回的會變少嗎？</summary><div class="inner"><p>不會。從簽約到交屋，雙方都不能以物價、工資、建材漲跌要求改分配比例，建商也不能以此延誤交屋；政府法令與不可抗力除外。<span class="cite">契約第 4 條第 9 項</span></p></div></details>
+    <details><summary>為什麼高樓層是建商分？</summary><div class="inner"><p>分配是看「價值」不是看樓層。您的分回價值是固定的，在地主分配範圍內（約 2 至 9 樓）選高一點的樓層，坪數就少一點；選低一點，坪數就多一點。</p></div></details>
+    <details><summary>如果有鄰居不簽，怎麼辦？</summary><div class="inner"><p>推動都市更新是一段建立共識的過程。當鄰居對於參與合建有疑慮時，我們的原則是「主動溝通、務實協助」。</p><p>除了透過說明會釐清大家的共通問題外，針對個別住戶在搬遷、稅務或產權上的特殊困境，團隊也會提供客製化的諮詢與行政協助，以誠意與專業解答疑慮。只要能兼顧全體地主權益與計畫推進，我們願意花時間深入了解每一戶的需求，共同克服困難。</p></div></details>
+    <details><summary>什麼時候可以搬回來？</summary><div class="inner"><p>預估工期將於建築設計定案後公布。從搬出去到通知交屋，每個月都有租金補貼。</p></div></details>
+    <details><summary>我年紀大了，搬家怎麼辦？</summary><div class="inner"><p>每戶有 5 萬元搬遷補貼，每月另有租金補貼。搬遷時遇到的困難，歡迎和專人討論。</p></div></details>
+    <details><summary>我的房子有貸款或抵押，可以參加嗎？</summary><div class="inner"><p><b>可以，完全不影響參加！</b>實務上多數房屋都有房貸，請您放心。本案推動時會辦理「不動產信託」，建設公司會全力協助您將現有貸款轉貸至本案的信託銀行，並於申請建造執照前由團隊協助完成抵押權整理與順暢對接，讓您不需煩惱繁複的銀行手續。</p><p class="cite" style="white-space:normal">相關轉貸或融資之本金、利息及規費依約由地主負擔，團隊會協助爭取良好的信託銀行條件。參照契約第 3 條第 3 項、第 6 條第 6 項。</p></div></details>
+    <details><summary>房子還在出租中，到時候會不會來不及要租客搬走？</summary><div class="inner"><p><b>絕對來得及！</b>合約上寫的是收到通知後「3 個月內點交」，但我們實務上會在拆遷前半年就先通知您。您有非常充足的時間跟租客說明與處理租約，不用擔心被時間逼著跑。如果在寫租約提醒或處理退租有任何疑問，我們團隊隨時能給您建議！<span class="cite">契約第 10 條第 6 項</span></p></div></details>
+    <details><summary>如果屋主過世，契約還有效嗎？</summary><div class="inner"><p>有效，契約效力及於繼承人。遺產稅、贈與稅及繼承問題由地主自行處理。<span class="cite">契約第 15 條、第 7 條</span></p></div></details>
+    <details><summary>分回的房子可以賣嗎？</summary><div class="inner"><p>可以。取得使用執照前要賣，需委託建商共同委任的銷售公司，銷售費用自付。<span class="cite">契約第 10 條第 2 項</span></p></div></details>
+    <details><summary>未來可以依照我的需求修改室內格局嗎？</summary><div class="inner"><p><b>可以的，我們提供專屬的「客戶變更（客變）」服務！</b>每個家庭對空間的需求都不盡相同。為配合建築工程進度與施工品質，客變設有固定的受理時間區段。請您完全放心，當客變期程到達時，我們的團隊會主動聯繫並通知您，為您預留充裕的時間與家人討論規劃！</p><p>在客變期間內，您可以提出格局或建材配備的微調需求，團隊會安排專業建築師為您進行結構安全與法令評估，經雙方確認可行後，全力協助您打造最貼合生活習慣的理想家園。</p><p>所有變更項目均會開立公開透明的追加減費用明細，經您充分評估滿意並簽署客變確認單後，再於一個月內辦理款項找補，流程清晰又安心！</p><p class="cite" style="white-space:normal">參照契約第 8 條第 2 項、第 4 條第 5 項</p></div></details>
+    <details><summary>為什麼要授權建商刻印章？</summary><div class="inner"><p>都更過程中需要蓋章的政府文件非常多。為了不讓您和長輩為了一顆印章頻繁奔波，簽約後會請您授權建商代刻一枚『專用印章』。請放心，這枚印章嚴格限定僅能使用於契約列出的 12 類都更行政文件（如：建照申請、都更同意書、信託指示、產權登記、水電申請等），建商嚴禁擅自移作其他用途。若有違背授權導致地主權益受損，建商依法須負擔全部的法律與賠償責任，您的權益絕對受到保障。<span class="cite">參照契約第 10 條第 7 項</span></p></div></details>
+    <details><summary>如果我沒有配合用印或交文件，會怎樣？</summary><div class="inner"><p>改建需要全體住戶一起齊心推進。為了不影響大家的進度，若您一時太忙忘記交文件，我們會先派專人溫馨提醒，並給予充裕的補件時間（收到通知後 15 天內；若來不及，書面催告後會再給 15 天）。只有在長久未配合、嚴重影響到全體鄰居權益的極端情況下，才會有依約按日計算延遲責任的機制。專人團隊都會隨時在旁協助您處理文件，請不用太過擔心。</p></div></details>
+    <details><summary>我的分回明細在哪裡看？</summary><div class="inner"><p>在您的合建契約附件一「分配試算」。歡迎預約專人說明。</p></div></details>
+  </div>
+</section>
+
+<nav class="pager" aria-label="上一頁與下一頁">
+  <a id="prev" href="#home">← 上一頁</a>
+  <a id="next" href="#site">下一頁 →</a>
+</nav>
+
+</main>
+
+<footer class="wrap">
+  <p>本網站僅供溫州公園案住戶參閱。內容僅供說明，權利義務以合建契約及其附件為準。</p></footer>
+
+<script>
+(function () {
+  var pages = Array.prototype.slice.call(document.querySelectorAll('section[data-page]'));
+  var ids = pages.map(function (s) { return s.getAttribute('data-page'); });
+  var tabs = document.querySelectorAll('nav.tabs a');
+  var labels = {};
+  tabs.forEach(function (a) { labels[a.getAttribute('href').slice(1)] = a.textContent; });
+  var prev = document.getElementById('prev'), next = document.getElementById('next');
+
+  function show(id, anchor) {
+    if (ids.indexOf(id) < 0) id = 'home';
+    pages.forEach(function (s) { s.hidden = s.getAttribute('data-page') !== id; });
+    tabs.forEach(function (a) {
+      var on = a.getAttribute('href') === '#' + id;
+      if (on) { a.setAttribute('aria-current', 'page'); a.scrollIntoView({ block: 'nearest', inline: 'nearest' }); }
+      else a.removeAttribute('aria-current');
+    });
+    var i = ids.indexOf(id);
+    prev.hidden = i === 0; next.hidden = i === ids.length - 1;
+    if (i > 0) { prev.href = '#' + ids[i - 1]; prev.textContent = '← ' + labels[ids[i - 1]]; }
+    if (i < ids.length - 1) { next.href = '#' + ids[i + 1]; next.textContent = labels[ids[i + 1]] + ' →'; }
+    var target = anchor && document.getElementById(anchor);
+    if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
+  }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var h = a.getAttribute('href').slice(1);
+    var go = a.getAttribute('data-go');
+    e.preventDefault();
+    if (go) { show(go, h); return; }
+    if (ids.indexOf(h) >= 0) { try { history.replaceState(null, '', '#' + h); } catch (err) {} show(h); }
+    else { var el = document.getElementById(h); if (el) el.scrollIntoView(); }
+  });
+
+  var start = (location.hash || '').slice(1);
+  show(start === 'contact' ? 'home' : start, start === 'contact' ? 'contact' : null);
+
+  var btn = document.getElementById('sizebtn');
+  function setBig(on) {
+    document.documentElement.classList.toggle('big', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '字恢復' : '字放大';
+  }
+  try { setBig(localStorage.getItem('wz-big') === '1'); } catch (err) {}
+  btn.addEventListener('click', function () {
+    var on = !document.documentElement.classList.contains('big');
+    setBig(on);
+    try { localStorage.setItem('wz-big', on ? '1' : '0'); } catch (err) {}
+  });
+})();
+</script>
+
+</body>
+</html>
