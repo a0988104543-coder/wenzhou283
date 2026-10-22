@@ -181,6 +181,30 @@ ol.steps .flag { display: inline-block; font-size: 0.78em; font-weight: 700; bor
 .pager { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 8px; border-top: 1px solid var(--line); }
 .pager a { color: var(--pine); font-weight: 700; text-decoration: none; padding: 8px 0; }
 footer { border-top: 1px solid var(--line); padding-block: 18px 28px; color: var(--muted); font-size: 0.8em; display: grid; gap: 4px; }
+.b-short { display: none; }
+.btns { display: flex; gap: 8px; flex: none; }
+.menubtn { display: none; }
+.nb { white-space: nowrap; }
+a.planlink { display: block; }
+@media (max-width: 640px) {
+  .b-full, .brand small { display: none; }
+  .b-short { display: inline; white-space: nowrap; }
+  .brand { font-size: 0.95em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .brandrow { padding-block: 8px; }
+  .menubtn { display: inline-block; }
+  .sizebtn { padding: 4px 10px; font-size: 0.78em; }
+  .btns { gap: 6px; }
+  nav.tabs { display: none; }
+  nav.tabs.open { display: block; max-height: 70vh; overflow-y: auto; }
+  nav.tabs ol { flex-direction: column; width: auto; gap: 2px; padding-bottom: 12px; }
+  nav.tabs a { font-size: 1em; padding: 10px 14px; white-space: normal; }
+  main { padding-block: 16px 32px; }
+  section[data-page] { gap: 16px; }
+  h1 { font-size: 1.5em; }
+  .hero h1 { font-size: 1.6em; }
+  .hero .sub { font-size: 1.08em; }
+  .cite { font-size: 0.86em; }
+}
 @media (prefers-reduced-motion: no-preference) {
   section[data-page]:not([hidden]) { animation: rise .25s ease-out; }
   @keyframes rise { from { transform: translateY(6px); } to { transform: none; } }
@@ -192,10 +216,13 @@ footer { border-top: 1px solid var(--line); padding-block: 18px 28px; color: var
 <header class="top">
   <div class="wrap">
     <div class="brandrow">
-      <div class="brand">溫州公園旁・羅斯福路三段 283 巷<small>都市更新協議合建　住戶說明</small><small>本網站僅供溫州公園案住戶參閱</small></div>
-      <button class="sizebtn" id="sizebtn" type="button" aria-pressed="false">字放大</button>
+      <div class="brand"><span class="b-full">溫州公園旁・羅斯福路三段 283 巷</span><span class="b-short">溫州公園合建說明</span><small>都市更新協議合建　住戶說明</small><small>本網站僅供溫州公園案住戶參閱</small></div>
+      <div class="btns">
+        <button class="sizebtn" id="sizebtn" type="button" aria-pressed="false">字放大</button>
+        <button class="sizebtn menubtn" id="menubtn" type="button" aria-expanded="false" aria-controls="tabs">☰ 選單</button>
+      </div>
     </div>
-    <nav class="tabs" aria-label="頁面">
+    <nav class="tabs" id="tabs" aria-label="頁面">
       <ol>
         <li><a href="#home">首頁</a></li>
         <li><a href="#site">基地與現況</a></li>
@@ -219,8 +246,8 @@ footer { border-top: 1px solid var(--line); padding-block: 18px 28px; color: var
 <section data-page="home">
   <div class="hero">
     <span class="stage">目前階段：整合簽約中</span>
-    <h1>溫州公園旁·50年老屋華麗轉身</h1>
-    <p class="sub">攜手 32 戶鄰居，打造大安區精品耐震電梯地標</p>
+    <h1><span class="nb">溫州公園旁·</span><wbr><span class="nb">50年老屋華麗轉身</span></h1>
+    <p class="sub"><span class="nb">攜手 32 戶鄰居，</span><wbr><span class="nb">打造大安區精品耐震電梯地標</span></p>
     <p>這座承載大家 50 年回憶的四層樓社區，預計由 32 戶地主攜手吉美建設，共同打造為地上 14 層、地下 4 層的全新鋼筋混凝土（RC）耐震電梯大樓。讓長輩輕鬆上下樓，為家人換上一座安全、舒適的現代美學家園。</p>
   </div>
   <div class="block">
@@ -312,16 +339,16 @@ footer { border-top: 1px solid var(--line); padding-block: 18px 28px; color: var
     <li>規劃申請耐震設計標章、綠建築與智慧建築認證、無障礙設計</li>
   </ul>
   <figure>
-    <img class="plan" src="plan-1f.jpg" alt="一樓平面示意圖：南側臨 9 弄，東側臨 283 巷，一樓為店面與大廳，西側為地下室車道" width="835" height="790">
-    <figcaption>一樓平面示意圖</figcaption>
+    <a class="planlink" href="plan-1f.jpg" target="_blank" rel="noopener"><img class="plan" src="plan-1f.jpg" alt="一樓平面示意圖：南側臨 9 弄，東側臨 283 巷，一樓為店面與大廳，西側為地下室車道" width="835" height="790"></a>
+    <figcaption>一樓平面示意圖　・點圖可放大</figcaption>
   </figure>
   <figure>
-    <img class="plan" src="plan-typical.jpg" alt="住宅標準層坪型配置示例一：大坪數為主，每層戶數較少，圍繞中央的電梯與樓梯" width="835" height="790">
-    <figcaption>住宅標準層　坪型配置示例一（大坪數為主）</figcaption>
+    <a class="planlink" href="plan-typical.jpg" target="_blank" rel="noopener"><img class="plan" src="plan-typical.jpg" alt="住宅標準層坪型配置示例一：大坪數為主，每層戶數較少，圍繞中央的電梯與樓梯" width="835" height="790"></a>
+    <figcaption>住宅標準層　坪型配置示例一（大坪數為主）　・點圖可放大</figcaption>
   </figure>
   <figure>
-    <img class="plan" src="plan-typical-2.jpg" alt="住宅標準層坪型配置示例二：小坪數為主，每層戶數較多，圍繞中央的電梯與樓梯" width="835" height="790">
-    <figcaption>住宅標準層　坪型配置示例二（小坪數為主）</figcaption>
+    <a class="planlink" href="plan-typical-2.jpg" target="_blank" rel="noopener"><img class="plan" src="plan-typical-2.jpg" alt="住宅標準層坪型配置示例二：小坪數為主，每層戶數較多，圍繞中央的電梯與樓梯" width="835" height="790"></a>
+    <figcaption>住宅標準層　坪型配置示例二（小坪數為主）　・點圖可放大</figcaption>
   </figure>
   <p class="note">平面圖為初步設計示意。兩種坪型配置只是示例，實際戶別與各戶面積，會依住戶需求再調整。</p>
   <div class="block">
@@ -375,22 +402,27 @@ footer { border-top: 1px solid var(--line); padding-block: 18px 28px; color: var
       <div><span class="tag">【C】容積移轉回饋</span><span>建商自行出資購買公共設施保留地移入的容積，特別額外提撥 10% 無償回饋給全體地主，依各戶土地持分比例分配！<span class="cite">契約第 4 條第 1 項第 3 款</span></span></div>
     </div>
     <details>
-      <summary>看計算公式與一個虛構的例子</summary>
+      <summary>試算範例（以土地持分 10 坪為例）</summary>
       <div class="inner">
-        <div class="formula">【A】土地持分坪數 × 225% × 1.58 × 62%</div>
-        <div class="formula">【B】土地持分坪數 × 225% × 1.58 × 78.85% × 62%</div>
-        <div class="formula">【C】容積移轉總面積 × 10% × 您的土地持分 ÷ 全案基地面積</div>
-        <p>以下是<b>虛構</b>的例子，不是本案任何一戶。假設土地持分 10 坪：</p>
+        <p>若以土地持分 10 坪進行試算，經三大坪數來源計算後，約可分配 <b>40.17 坪</b>（以 2 樓以上均價計算；實際權狀坪數依您選擇的樓層而定），另可依原戶別選配 1 個平面車位：</p>
         <div class="tablewrap"><table>
-          <thead><tr><th>來源</th><th>計算</th><th style="text-align:right">坪數</th></tr></thead>
+          <thead><tr><th>坪數來源</th><th>計算方式（帶入數據）</th><th style="text-align:right">分回坪數</th></tr></thead>
           <tbody>
-            <tr><td>A 法定容積</td><td>10 × 225% × 1.58 × 62%</td><td class="num">22.04</td></tr>
-            <tr><td>B 都更獎勵</td><td>10 × 225% × 1.58 × 78.85% × 62%</td><td class="num">17.38</td></tr>
-            <tr><td>C 容積移轉回饋</td><td>317.06 × 10% × 10 ÷ 421.69</td><td class="num">0.75</td></tr>
-            <tr><td><b>合計</b></td><td></td><td class="num"><b>40.17</b></td></tr>
+            <tr><td>A. 法定容積</td><td>10 坪 × 225% × 1.58 × 62%</td><td class="num">22.04 坪</td></tr>
+            <tr><td>B. 都更獎勵</td><td>10 坪 × 225% × 1.58 × 78.85% × 62%</td><td class="num">17.38 坪</td></tr>
+            <tr><td>C. 容積移轉回饋</td><td>317.06 坪 × 10% ×（10 坪 ÷ 421.69 坪）</td><td class="num">0.75 坪</td></tr>
+            <tr><td><b>合計可分配坪數</b></td><td>【A】＋【B】＋【C】</td><td class="num"><b>40.17 坪</b></td></tr>
           </tbody>
         </table></div>
-        <p>1.58 是「建築係數」，用來把容積換算成含公設的面積。</p>
+        <h2>算式關鍵數字白話說明</h2>
+        <ul class="plain">
+          <li><b>225%（住三法定容積率）：</b>本案土地屬於台北市「第三種住宅區」依法可興建之基礎容積率。</li>
+          <li><b>1.58（建築係數）：</b>將純容積換算為包含陽台、梯廳及公設等完整「房屋權狀登記面積」之換算倍率。</li>
+          <li><b>62%（地主分回比例）：</b>本案地主享有高達 62% 的坪數分回比例（建商分回 38%）。</li>
+          <li><b>78.85%（都更總獎勵）：</b>團隊全力爭取之「都更獎勵＋防災型都更獎勵」預估比例，實際依政府核定。</li>
+          <li><b>10%（容移無償回饋）：</b>建商自行出資購買公設保留地移入之容積，特別額外提撥 10% 無償回饋給全體地主，依各戶土地持分比例分配。</li>
+        </ul>
+        <p class="cite" style="white-space:normal">（註：本範例為方便理解之整數試算，實際分回坪數以各戶土地謄本精確持分及政府最後核定之都更事業計畫為準）</p>
       </div>
     </details>
   </div>
@@ -423,8 +455,8 @@ footer { border-top: 1px solid var(--line); padding-block: 18px 28px; color: var
   <p>為了確保社區全體 32 戶鄰居都能平等享有良好的停車空間，本案規劃以原戶別為基準，每戶保障最多選配 1 個平面車位（若未來房屋有分戶規劃，選配資格仍以原 32 戶為計算基準）。</p>
   <p>在車位位置的選擇上，我們會先協助地主們進行和諧溝通與協商；若遇到心儀位置重疊時，再透過公開公正的抽籤方式確定，過程絕對透明，讓大家選得安心又開心！<span class="cite">參照契約第 4 條第 2 項第 3 款</span></p>
   <figure>
-    <img class="plan" src="plan-parking.jpg" alt="地下室停車示意圖：車道由西側坡道進出，車位沿外牆與中央排列" width="835" height="790">
-    <figcaption>地下室停車示意圖（初步設計，實際車位數量與位置以核准圖說為準）</figcaption>
+    <a class="planlink" href="plan-parking.jpg" target="_blank" rel="noopener"><img class="plan" src="plan-parking.jpg" alt="地下室停車示意圖：車道由西側坡道進出，車位沿外牆與中央排列" width="835" height="790"></a>
+    <figcaption>地下室停車示意圖（初步設計，實際車位數量與位置以核准圖說為準）　・點圖可放大</figcaption>
   </figure>
 </section>
 
@@ -555,7 +587,7 @@ footer { border-top: 1px solid var(--line); padding-block: 18px 28px; color: var
 <section data-page="faq" hidden>
   <div><p class="eyebrow">常見問題</p><h1>大家最常問的 14 個問題</h1></div>
   <div class="faq">
-    <details><summary>我要出錢嗎？</summary><div class="inner"><p>蓋房子的費用由建商負擔。地主需要自付的是自己的稅費（見「稅費」）、分回面積超過應分面積的找補款，以及自己要求的室內變更費用。</p></div></details>
+    <details><summary>改建過程中，地主需要自己出錢嗎？</summary><div class="inner"><p><b>興建費用完全不用掏錢！營造成本由建商全額負擔。</b></p><p>蓋新房子最昂貴的「建築規劃、設計與工程營造費用」，全數由吉美建設負責負擔，地主完全不需要掏錢出興建費。</p><p>主要有以下幾類屬於「個人資產或選擇性項目」會由地主自行處理，每一筆明細均公開透明：</p><ol class="plain"><li><b>個人專屬稅費與登記規費：</b>如產權登記規費、代書費，以及依法應由地主負擔之個人稅捐（政府都更稅費減免優惠，均由建商免費代為申辦）。</li><li><b>自願選大坪數之找補款：</b>若您選屋時實際選擇的坪數超過應分回坪數（以不超過 10% 為原則），才需就多選的坪數支付差額找補款；反之，若選擇的坪數少於應分坪數，則由建商找補差額給您。</li><li><b>個人客變追加費用：</b>若您主動提出室內隔間或配備的客製化變更（客變），僅針對您要求的追加工程部分辦理找補。</li><li><b>交屋後的社區費用：</b>新大樓的管理基金、管理費及水電費，依分得房屋比例分擔，與一般新成屋相同。</li></ol><p class="cite" style="white-space:normal">參照契約第 3 條第 2 項、第 4 條第 5 項、第 7 條、第 8 條第 2 項</p></div></details>
     <details><summary>物價上漲，我分回的會變少嗎？</summary><div class="inner"><p>不會。從簽約到交屋，雙方都不能以物價、工資、建材漲跌要求改分配比例，建商也不能以此延誤交屋；政府法令與不可抗力除外。<span class="cite">契約第 4 條第 9 項</span></p></div></details>
     <details><summary>為什麼高樓層是建商分？</summary><div class="inner"><p>分配是看「價值」不是看樓層。您的分回價值是固定的，在地主分配範圍內（約 2 至 9 樓）選高一點的樓層，坪數就少一點；選低一點，坪數就多一點。</p></div></details>
     <details><summary>如果有鄰居不簽，怎麼辦？</summary><div class="inner"><p>推動都市更新是一段建立共識的過程。當鄰居對於參與合建有疑慮時，我們的原則是「主動溝通、務實協助」。</p><p>除了透過說明會釐清大家的共通問題外，針對個別住戶在搬遷、稅務或產權上的特殊困境，團隊也會提供客製化的諮詢與行政協助，以誠意與專業解答疑慮。只要能兼顧全體地主權益與計畫推進，我們願意花時間深入了解每一戶的需求，共同克服困難。</p></div></details>
@@ -590,9 +622,13 @@ footer { border-top: 1px solid var(--line); padding-block: 18px 28px; color: var
   var labels = {};
   tabs.forEach(function (a) { labels[a.getAttribute('href').slice(1)] = a.textContent; });
   var prev = document.getElementById('prev'), next = document.getElementById('next');
+  var nav = document.getElementById('tabs'), menubtn = document.getElementById('menubtn');
+  function setMenu(open) { nav.classList.toggle('open', open); menubtn.setAttribute('aria-expanded', open ? 'true' : 'false'); menubtn.textContent = open ? '✕ 關閉' : '☰ 選單'; }
+  menubtn.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
 
   function show(id, anchor) {
     if (ids.indexOf(id) < 0) id = 'home';
+    setMenu(false);
     pages.forEach(function (s) { s.hidden = s.getAttribute('data-page') !== id; });
     tabs.forEach(function (a) {
       var on = a.getAttribute('href') === '#' + id;
