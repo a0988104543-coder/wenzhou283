@@ -101,6 +101,7 @@ p { margin: 0; }
 .cite { color: var(--muted); font-size: 0.8em; font-weight: 400; white-space: nowrap; }
 .block { display: grid; gap: 10px; }
 ul.plain, ol.plain { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; }
+ul.plain.nodot { list-style: none; padding-left: 0; }
 .note {
   background: var(--amber-soft); color: var(--ink); border-radius: 10px; padding: 10px 14px; font-size: 0.9em;
 }
@@ -468,7 +469,7 @@ a.planlink { display: block; }
   <p class="key">房屋坪數不受影響，車位採「均價折算＋實際找補」機制。</p>
   <p>本案「房屋價值」與「車位價值」係各自獨立計算，因此不論您是否選配車位，均不會影響房屋原本可分回的坪數與價值。在車位分配與找補上，規則公開透明：</p>
   <div class="block">
-    <ul class="plain">
+    <ul class="plain nodot">
       <li><b>1. 每戶保障 1 車位選配額度：</b>以原 32 戶為基準，每戶保障最多選配 1 個平面車位。</li>
       <li><b>2. 以「車位平均單價」計入總資產：</b>計算地主可分回價值時，是以「全體地主可分配範圍之車位均價」折算 1 個車位之價值給您。</li>
       <li><b>3. 依實際選定位置辦理找補：</b>實際選配時，依您所選擇車位的定價與均價之差額辦理找補。選擇高於均價的車位需補差額；選擇低於均價的車位，則由建商退還差額。相關金額一律於分屋找補時計算。</li>
