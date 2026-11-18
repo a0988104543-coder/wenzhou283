@@ -12,6 +12,7 @@
 - manifest 的值 = 讀稿內容＋聲音＋語速的雜湊；任何一項改了，該段才會重產。
 - 網頁只為 manifest 裡有的段落顯示「▶ 聽」按鈕。
 """
+import os
 import argparse, asyncio, hashlib, json, re, sys
 from pathlib import Path
 
@@ -45,7 +46,7 @@ def digest(text, voice, rate):
 async def synth(text, voice, rate, out):
     import edge_tts
     out.parent.mkdir(parents=True, exist_ok=True)
-    await edge_tts.Communicate(text, voice, rate=rate).save(str(out))
+    await edge_tts.Communicate(text, voice, rate=rate, proxy=os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")).save(str(out))
     if out.stat().st_size < 1000:
         raise RuntimeError(f"{out.name} 檔案太小，產生失敗")
 
