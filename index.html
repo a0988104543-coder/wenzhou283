@@ -49,6 +49,16 @@ img { max-width: 100%; }
   color-scheme: dark;
 }
 html.big { --fs: 21px; }
+/* 語音朗讀 */
+.listen {
+  font: inherit; font-family: var(--font-body); font-size: calc(var(--fs) * 0.8); font-weight: 700; line-height: 1;
+  display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; white-space: nowrap;
+  margin-left: 8px; min-height: 40px; padding: 6px 14px; cursor: pointer;
+  border: 1.5px solid var(--pine); border-radius: 999px; color: var(--pine); background: var(--surface);
+}
+.listen[aria-pressed="true"] { background: var(--amber); border-color: var(--amber); color: var(--surface); }
+.listen:disabled { opacity: 0.5; cursor: default; }
+
 * { box-sizing: border-box; }
 body {
   background: var(--bg); color: var(--ink);
@@ -226,6 +236,7 @@ a.planlink { display: block; }
     <div class="brandrow">
       <div class="brand"><span class="b-full">溫州公園旁・羅斯福路三段 283 巷</span><span class="b-short">溫州公園合建說明</span><small>都市更新協議合建　住戶說明</small><small>本網站僅供溫州公園案住戶參閱</small></div>
       <div class="btns">
+        <button class="sizebtn" id="slowbtn" type="button" aria-pressed="false" hidden>念慢一點</button>
         <button class="sizebtn" id="sizebtn" type="button" aria-pressed="false">字放大</button>
       </div>
     </div>
@@ -261,12 +272,12 @@ a.planlink { display: block; }
 <section data-page="home">
   <div class="hero">
     <span class="stage">目前階段：整合簽約中</span>
-    <h1><span class="nb">溫州公園旁·</span><wbr><span class="nb">50年老屋華麗轉身</span></h1>
+    <h1 data-audio="home-1"><span class="nb">溫州公園旁·</span><wbr><span class="nb">50年老屋華麗轉身</span></h1>
     <p class="sub"><span class="nb">攜手 32 戶鄰居，</span><wbr><span class="nb">打造大安區精品耐震電梯地標</span></p>
     <p>這座承載大家 50 年回憶的四層樓社區，預計由 32 戶地主攜手吉美建設，共同打造為地上 14 層、地下 4 層的全新鋼筋混凝土（RC）耐震電梯大樓。讓長輩輕鬆上下樓，為家人換上一座安全、舒適的現代美學家園。</p>
   </div>
   <div class="block">
-    <h2>開啟改建之前，為您把關的【三大安心承諾】</h2>
+    <h2 data-audio="home-2">開啟改建之前，為您把關的【三大安心承諾】</h2>
     <div class="three">
       <div><span class="lbl">【零興建負擔】</span><b>建商全額出資</b><span>蓋新房子的所有工程費用與營造成本均由吉美建設負擔，地主完全不需要掏錢出興建費，輕鬆換新家。</span><span class="cite">（稅費與找補請見「稅費」與「分回怎麼算」章節說明）（參照契約第 3 條第 2 項）</span></div>
       <div><span class="lbl">【資產抗通膨】</span><b>分回比例簽約即確定</b><span>您的分回比例與分配原則，在簽約時就已確定！未來無論物價、工資或建材如何上漲，都不會因此調整您的分回比例。</span><span class="cite">（政府法令及不可抗力因素除外；實際坪數依政府核定獎勵值為準）（參照契約第 4 條第 9 項）</span></div>
@@ -292,7 +303,7 @@ a.planlink { display: block; }
 
 <!-- 2 基地與現況 -->
 <section data-page="site" hidden>
-  <div><p class="eyebrow">基地與現況</p><h1>範圍是溫州公園北側的 5 筆土地、4 棟公寓</h1></div>
+  <div><p class="eyebrow">基地與現況</p><h1 data-audio="site-1">範圍是溫州公園北側的 5 筆土地、4 棟公寓</h1></div>
   <p class="key">4 棟建物都在民國 63 年 2 月 15 日以前取得使用執照，直接適用防災型都更獎勵。</p>
   <figure>
     <svg viewBox="0 0 640 430" role="img" aria-label="基地門牌示意：四棟公寓位於 283 巷、9 弄與 19 弄之間，南面溫州公園">
@@ -344,7 +355,7 @@ a.planlink { display: block; }
 
 <!-- 3 未來的大樓 -->
 <section data-page="building" hidden>
-  <div><p class="eyebrow">未來的大樓</p><h1>預計地上 14 層、地下 4 層的電梯大樓</h1></div>
+  <div><p class="eyebrow">未來的大樓</p><h1 data-audio="building-1">預計地上 14 層、地下 4 層的電梯大樓</h1></div>
   <p class="key">實際樓層與設計，以政府核准的建造執照為準。<span class="cite">契約第 3 條第 2 項</span></p>
   <ul class="plain">
     <li>可蓋的總面積，是現在法定可蓋面積的 2 倍（加上都更獎勵、防災型都更獎勵與容積移轉）</li>
@@ -367,7 +378,7 @@ a.planlink { display: block; }
   </figure>
   <p class="note">平面圖為初步設計示意。兩種坪型配置只是示例，實際戶別與各戶面積，會依住戶需求再調整。</p>
   <div class="block">
-    <h2>未來新大樓的「建材品質」與「保固服務」如何保障？</h2>
+    <h2 data-audio="building-2">未來新大樓的「建材品質」與「保固服務」如何保障？</h2>
     <p class="key">完全比照公開銷售的建材規格，享完整結構保固！</p>
     <ol class="plain">
       <li><b>對標銷售戶規格：</b>本案位處大安區優質地段，建材與設備完全比照未來公開銷售戶之合約及廣告海報建材表，地主戶與銷售戶採用相同規格，打造區域品質地標！</li>
@@ -380,14 +391,14 @@ a.planlink { display: block; }
 
 <!-- 4 分回怎麼算 -->
 <section data-page="share" hidden>
-  <div><p class="eyebrow">分回怎麼算</p><h1>我的房屋分回坪數是怎麼算出來的？選樓層會影響我的權益嗎？</h1></div>
+  <div><p class="eyebrow">分回怎麼算</p><h1 data-audio="share-1">我的房屋分回坪數是怎麼算出來的？選樓層會影響我的權益嗎？</h1></div>
   <p class="key">全案 32 戶採用完全相同的公平公式，您的資產「總價值」簽約後即固定，樓層與坪數由您決定！</p>
   <div class="block">
     <h2>1. 公平原則：全案同公式，透明無黑箱</h2>
     <p>全社區 32 戶均採用完全相同的算式計算分回面積，唯一的差別僅在於每戶原本的「土地持分大小」。</p>
   </div>
   <div class="block">
-    <h2>2. 樓層分工與選屋彈性</h2>
+    <h2 data-audio="share-2">2. 樓層分工與選屋彈性</h2>
     <ul class="plain">
       <li><b>樓層分配：</b>本案由地主優先由 2 樓往上連續選擇（約至 9 樓），享優質居住環境；建商則由頂樓往下分配。<span class="cite">契約第 4 條第 2 項</span></li>
       <li><b>價值固定，自由選屋：</b>每戶分回的是一個「固定的總價值」，就像擁有固定額度的選屋點數：
@@ -409,7 +420,7 @@ a.planlink { display: block; }
     </figure>
   </div>
   <div class="block">
-    <h2>3. 分回坪數的三大來源</h2>
+    <h2 data-audio="share-3">3. 分回坪數的三大來源</h2>
     <p>您分回的每一坪都有明確的法規與契約依據（以土地持分 × 225% 住三容積為基準）：</p>
     <div class="src">
       <div><span class="tag">【A】法定容積</span><span>土地原本依法能蓋的基礎坪數，地主分回 62%。</span></div>
@@ -429,7 +440,7 @@ a.planlink { display: block; }
             <tr><td><b>合計可分配坪數</b></td><td>【A】＋【B】＋【C】</td><td class="num"><b>40.17 坪</b></td></tr>
           </tbody>
         </table></div>
-        <h2>算式關鍵數字白話說明</h2>
+        <h2 data-audio="share-4">算式關鍵數字白話說明</h2>
         <ul class="plain">
           <li><b>225%（住三法定容積率）：</b>本案土地屬於台北市「第三種住宅區」依法可興建之基礎容積率。</li>
           <li><b>1.58（建築係數）：</b>將純容積換算為包含陽台、梯廳及公設等完整「房屋權狀登記面積」之換算倍率。</li>
@@ -451,7 +462,7 @@ a.planlink { display: block; }
 
 <!-- 5 一樓店面 -->
 <section data-page="shop" hidden>
-  <div><p class="eyebrow">一樓店面</p><h1>原一樓戶優先分回一樓店面，並有保底面積</h1></div>
+  <div><p class="eyebrow">一樓店面</p><h1 data-audio="shop-1">原一樓戶優先分回一樓店面，並有保底面積</h1></div>
   <p>適用對象：283 巷 11、13、15、17 號及 283 巷 9 弄 1、3 號的一樓所有權人。</p>
   <ol class="plain">
     <li>優先分回原位次、原方向的店面。</li>
@@ -465,7 +476,7 @@ a.planlink { display: block; }
 
 <!-- 6 車位 -->
 <section data-page="parking" hidden>
-  <div><p class="eyebrow">車位</p><h1>車位該怎麼選配？選不選車位會影響我的房屋坪數嗎？選車位要補差額嗎？</h1></div>
+  <div><p class="eyebrow">車位</p><h1 data-audio="parking-1">車位該怎麼選配？選不選車位會影響我的房屋坪數嗎？選車位要補差額嗎？</h1></div>
   <p class="key">房屋坪數不受影響，車位採「均價折算＋實際找補」機制。</p>
   <p>本案「房屋價值」與「車位價值」係各自獨立計算，因此不論您是否選配車位，均不會影響房屋原本可分回的坪數與價值。在車位分配與找補上，規則公開透明：</p>
   <div class="block">
@@ -488,14 +499,14 @@ a.planlink { display: block; }
   <div><p class="eyebrow">搬遷與補貼</p><h1>改建期間的「搬家」與「租金補貼」怎麼安排？</h1></div>
   <p class="key">團隊提供完整安居補貼與清運協助，讓您輕鬆搬遷、無後顧之憂！</p>
   <div class="block">
-    <h2>1. 搬家無壓力：提早預告、清運免煩惱</h2>
+    <h2 data-audio="move-1">1. 搬家無壓力：提早預告、清運免煩惱</h2>
     <ul class="plain">
       <li><b>時間充裕提早預告：</b>雖然合約約定點交期為通知後 3 個月內，但團隊實務上會於拆遷半年前提早預告進度，讓您與家人有充裕時間安排新居或租約。</li>
       <li><b>舊屋清運免費處理：</b>搬家時您只需帶走珍貴物品與個人所需；其餘帶不走的大型舊傢俱或廢棄物，均由團隊免費協助清運與拆除，費用全由建商負擔，不用辛苦清空！點交後留下的物品視為您已放棄，請務必先帶走重要物品。</li>
     </ul>
   </div>
   <div class="block">
-    <h2>2. 雙重安居補貼：搬家有津貼，月月有租金</h2>
+    <h2 data-audio="move-2">2. 雙重安居補貼：搬家有津貼，月月有租金</h2>
     <ul class="plain">
       <li><b>搬遷安心津貼：</b>每戶提供一次性 5 萬元搬遷補助，補貼您搬家與整理費用。</li>
       <li><b>每月安居租金補貼：</b>自騰空點交完成日起，至新家完工通知交屋為止，每月定額補助，依原建物權狀坪數計算：
@@ -507,12 +518,12 @@ a.planlink { display: block; }
     </ul>
   </div>
   <div class="block">
-    <h2>3. 自動匯款，精準到位</h2>
+    <h2 data-audio="move-3">3. 自動匯款，精準到位</h2>
     <p>租金補貼於每月月初定期匯入您指定的銀行帳戶；若點交或交屋當月未滿一整個月，也會精確按實際天數計算補貼金額，保障您的生活資金流暢。</p>
     <p class="cite">參照契約第 3 條第 4 項、第 4 條第 7 項、第 10 條第 6 項</p>
   </div>
   <details>
-    <summary>沒有產權的增建部分怎麼補貼</summary>
+    <summary data-audio="move-q1">沒有產權的增建部分怎麼補貼</summary>
     <div class="inner">
       <p>一樓平台、庭院、陽台、從一樓室內進入的地下室、頂樓增建（需有屋頂及牆面），依實測坪數，每坪一次補貼 5 萬元。</p>
       <p>從公用樓梯進入的地下室空間不列入補貼。</p>
@@ -522,7 +533,7 @@ a.planlink { display: block; }
 
 <!-- 8 信託與保障 -->
 <section data-page="trust" hidden>
-  <div><p class="eyebrow">信託與保障</p><h1>資產安全與權益保障：不動產與資金雙重信託</h1></div>
+  <div><p class="eyebrow">信託與保障</p><h1 data-audio="trust-1">資產安全與權益保障：不動產與資金雙重信託</h1></div>
   <p class="key">為保障地主資產安全，本案設置嚴密的金融防護機制，讓您安心參與改建：</p>
   <div class="block">
     <h2>❶ 不動產與資金「雙重信託」，由銀行與建經公司共同把關</h2>
@@ -546,25 +557,25 @@ a.planlink { display: block; }
   <div><p class="eyebrow">流程與作業</p><h1>從簽約到煥然一新：四大階段，陪您穩健走向新家</h1></div>
   <p class="key">本案從簽約推動到順利交屋，團隊會全程為您把關。您只需在關鍵節點配合簡單的行政手續，其餘繁雜的政府審議與施工品質均由吉美專業團隊為您服務！</p>
   <ol class="steps">
-    <li class="now"><div class="stagebox"><span class="t">階段一：攜手立約與精心規劃<span class="flag now">現在進行中</span></span>
+    <li class="now"><div class="stagebox"><span class="t" data-audio="process-1">階段一：攜手立約與精心規劃<span class="flag now">現在進行中</span></span>
       <ul class="plain">
         <li><b>展現誠意爭取獎勵：</b>團隊將全力為全體地主爭取「防災型都更獎勵」容積！依合約約定，事業計畫需於「防災型都更獎勵」落日前(細部計畫當前將於118/3落日)送件；若未能如期送件且雙方未協議展期，合建契約將自動失效。</li>
         <li><b>打造理想家園：</b>舉辦設計說明會與公聽會，並由專業估價單位計算各樓層單價，進行公開透明的意願調查與選屋作業。</li>
       </ul>
       <span class="you">地主輕鬆配合：了解合約內容並簽署合建契約與都更同意書，踴躍參與說明會與選屋。</span></div></li>
-    <li><div class="stagebox"><span class="t">階段二：政府審議與產權信託<span class="flag date">資產安全有保障</span></span>
+    <li><div class="stagebox"><span class="t" data-audio="process-2">階段二：政府審議與產權信託<span class="flag date">資產安全有保障</span></span>
       <ul class="plain">
         <li><b>審議公告：</b>事業計畫送主管機關審議核定並依法公告。</li>
         <li><b>信託安全防護網：</b>都更核定後、拆屋前，由受託銀行與建經公司辦理信託簽約，確保產權與建案資金專款專用。</li>
       </ul>
       <span class="you">地主輕鬆配合：依通知備妥相關證件，在專人協助下完成信託契約簽署與用印。</span></div></li>
-    <li><div class="stagebox"><span class="t">階段三：安心搬遷與精緻施工<span class="flag money">月月租金補貼</span></span>
+    <li><div class="stagebox"><span class="t" data-audio="process-3">階段三：安心搬遷與精緻施工<span class="flag money">月月租金補貼</span></span>
       <ul class="plain">
         <li><b>提早通知好準備：</b>取得建造執照後申報開工，團隊會提早預告點交時間，並發放 5 萬元搬遷津貼與每月定額租金補貼（自動匯入指定帳戶）。</li>
         <li><b>舊屋免煩惱：</b>提供免費大型廢棄物清運，讓您無後顧之憂輕鬆搬遷。</li>
       </ul>
       <span class="you">地主輕鬆配合：安心搬遷點交，按月領取安居租金補貼。</span></div></li>
-    <li><div class="stagebox"><span class="t">階段四：品質驗收與歡喜交屋<span class="flag date">開啟美好新生活</span></span>
+    <li><div class="stagebox"><span class="t" data-audio="process-4">階段四：品質驗收與歡喜交屋<span class="flag date">開啟美好新生活</span></span>
       <ul class="plain">
         <li><b>嚴謹驗收品質把關：</b>取得使用執照後進行面積微調找補，團隊將安排專人陪同您進行會同驗屋，確保各項細節改善完善。</li>
         <li><b>歡喜領鑰匙：</b>完成驗收手續並點交鑰匙，租金補貼發放至通知交屋日止；並享有結構體 15 年（自使用執照核發日起算）、設備 1 年（自交屋日起算）的長期保固承諾！</li>
@@ -581,21 +592,21 @@ a.planlink { display: block; }
   <p class="key">建商全額負擔工程與信託費用，並由團隊主動為您申請政府都更稅費減免！</p>
   <p>重建期間的稅費安排遵循「權益對等、公開透明」原則，絕無隱藏費用：</p>
   <div class="block">
-    <h2>1. 【建商全額負擔興建費用】</h2>
+    <h2 data-audio="tax-1">1. 【建商全額負擔興建費用】</h2>
     <ul class="plain">
       <li><b>建築與營造費用：</b>建築規劃、設計與工程營造費用，全數由建商負擔（第 3 條第 2 項）。</li>
       <li><b>工程與設施規費：</b>新大樓的瓦斯內外管工程費、社區法定公共基金（提撥給未來管委會），以及整體信託管理費用，均由建商全額吸收負擔。</li>
     </ul>
   </div>
   <div class="block">
-    <h2>2. 【享政府都更減免＋建商主動代申辦】</h2>
+    <h2 data-audio="tax-2">2. 【享政府都更減免＋建商主動代申辦】</h2>
     <ul class="plain">
       <li><b>房屋稅、地價稅、土地增值稅及契稅：</b>都市更新依法享有稅捐減免優惠！合約明確約定，上述稅捐依法可申請之減免，均由團隊免費代為向政府機關提出申辦，幫您把關省荷包。減免後仍需繳納的土地增值稅（土地過戶前）與契稅，依約由地主負擔。</li>
       <li><b>興建期負擔：</b>舊屋拆除後的房屋稅停止課徵；過戶前的地價稅由地主負擔；土地過戶或使照取得後的房屋稅與地價稅，則依各自分得房地比例各自負擔。</li>
     </ul>
   </div>
   <div class="block">
-    <h2>3. 【個人資產與產權登記規費】</h2>
+    <h2 data-audio="tax-3">3. 【個人資產與產權登記規費】</h2>
     <ul class="plain">
       <li><b>產權登記與管理費：</b>地政規費、代書費、印花稅、水電費及未來社區管理費等，由雙方按分回房屋面積比例各自負擔。</li>
       <li><b>個人財產稅務：</b>個人專屬之遺產稅、贈與稅、繼承相關稅務，以及依營業稅法進行房地互易時開立憑證之營業稅，由地主自行負擔。</li>
@@ -608,20 +619,20 @@ a.planlink { display: block; }
 <section data-page="faq" hidden>
   <div><p class="eyebrow">常見問題</p><h1>大家最常問的 14 個問題</h1></div>
   <div class="faq">
-    <details><summary>改建過程中，地主需要自己出錢嗎？</summary><div class="inner"><p><b>興建費用完全不用掏錢！營造成本由建商全額負擔。</b></p><p>蓋新房子最昂貴的「建築規劃、設計與工程營造費用」，全數由吉美建設負責負擔，地主完全不需要掏錢出興建費。</p><p>主要有以下幾類屬於「個人資產或選擇性項目」會由地主自行處理，每一筆明細均公開透明：</p><ol class="plain"><li><b>個人專屬稅費與登記規費：</b>如產權登記規費、代書費，以及依法應由地主負擔之個人稅捐（政府都更稅費減免優惠，均由建商免費代為申辦）。</li><li><b>自願選大坪數之找補款：</b>若您選屋時實際選擇的坪數超過應分回坪數（以不超過 10% 為原則），才需就多選的坪數支付差額找補款；反之，若選擇的坪數少於應分坪數，則由建商找補差額給您。</li><li><b>個人客變追加費用：</b>若您主動提出室內隔間或配備的客製化變更（客變），僅針對您要求的追加工程部分辦理找補。</li><li><b>交屋後的社區費用：</b>新大樓的管理基金、管理費及水電費，依分得房屋比例分擔，與一般新成屋相同。</li></ol><p class="cite" style="white-space:normal">參照契約第 3 條第 2 項、第 4 條第 5 項、第 7 條、第 8 條第 2 項</p></div></details>
-    <details><summary>物價上漲，我分回的會變少嗎？</summary><div class="inner"><p>不會。從簽約到交屋，雙方都不能以物價、工資、建材漲跌要求改分配比例，建商也不能以此延誤交屋；政府法令與不可抗力除外。<span class="cite">契約第 4 條第 9 項</span></p></div></details>
-    <details><summary>為什麼高樓層是建商分？</summary><div class="inner"><p>分配是看「價值」不是看樓層。您的分回價值是固定的，在地主分配範圍內（約 2 至 9 樓）選高一點的樓層，坪數就少一點；選低一點，坪數就多一點。</p></div></details>
-    <details><summary>如果有鄰居不簽，怎麼辦？</summary><div class="inner"><p>推動都市更新是一段建立共識的過程。當鄰居對於參與合建有疑慮時，我們的原則是「主動溝通、務實協助」。</p><p>除了透過說明會釐清大家的共通問題外，針對個別住戶在搬遷、稅務或產權上的特殊困境，團隊也會提供客製化的諮詢與行政協助，以誠意與專業解答疑慮。只要能兼顧全體地主權益與計畫推進，我們願意花時間深入了解每一戶的需求，共同克服困難。</p></div></details>
-    <details><summary>什麼時候可以搬回來？</summary><div class="inner"><p>預估工期將於建築設計定案後公布。從搬出去到通知交屋，每個月都有租金補貼。</p></div></details>
-    <details><summary>我年紀大了，搬家怎麼辦？</summary><div class="inner"><p>每戶有 5 萬元搬遷補貼，每月另有租金補貼。搬遷時遇到的困難，歡迎和專人討論。</p></div></details>
-    <details><summary>我的房子有貸款或抵押，可以參加嗎？</summary><div class="inner"><p><b>可以，完全不影響參加！</b>實務上多數房屋都有房貸，請您放心。本案推動時會辦理「不動產信託」，建設公司會全力協助您將現有貸款轉貸至本案的信託銀行，並於申請建造執照前由團隊協助完成抵押權整理與順暢對接，讓您不需煩惱繁複的銀行手續。</p><p class="cite" style="white-space:normal">相關轉貸或融資之本金、利息及規費依約由地主負擔，團隊會協助爭取良好的信託銀行條件。參照契約第 3 條第 3 項、第 6 條第 6 項。</p></div></details>
-    <details><summary>房子還在出租中，到時候會不會來不及要租客搬走？</summary><div class="inner"><p><b>絕對來得及！</b>合約上寫的是收到通知後「3 個月內點交」，但我們實務上會在拆遷前半年就先通知您。您有非常充足的時間跟租客說明與處理租約，不用擔心被時間逼著跑。如果在寫租約提醒或處理退租有任何疑問，我們團隊隨時能給您建議！<span class="cite">契約第 10 條第 6 項</span></p></div></details>
-    <details><summary>如果屋主過世，契約還有效嗎？</summary><div class="inner"><p>有效，契約效力及於繼承人。遺產稅、贈與稅及繼承問題由地主自行處理。<span class="cite">契約第 15 條、第 7 條</span></p></div></details>
-    <details><summary>分回的房子可以賣嗎？</summary><div class="inner"><p>可以。取得使用執照前要賣，需委託建商共同委任的銷售公司，銷售費用自付。<span class="cite">契約第 10 條第 2 項</span></p></div></details>
-    <details><summary>未來可以依照我的需求修改室內格局嗎？</summary><div class="inner"><p><b>可以的，我們提供專屬的「客戶變更（客變）」服務！</b>每個家庭對空間的需求都不盡相同。為配合建築工程進度與施工品質，客變設有固定的受理時間區段。請您完全放心，當客變期程到達時，我們的團隊會主動聯繫並通知您，為您預留充裕的時間與家人討論規劃！</p><p>在客變期間內，您可以提出格局或建材配備的微調需求，團隊會安排專業建築師為您進行結構安全與法令評估，經雙方確認可行後，全力協助您打造最貼合生活習慣的理想家園。</p><p>所有變更項目均會開立公開透明的追加減費用明細，經您充分評估滿意並簽署客變確認單後，再於一個月內辦理款項找補，流程清晰又安心！</p><p class="cite" style="white-space:normal">參照契約第 8 條第 2 項、第 4 條第 5 項</p></div></details>
-    <details><summary>為什麼要授權建商刻印章？</summary><div class="inner"><p>都更過程中需要蓋章的政府文件非常多。為了不讓您和長輩為了一顆印章頻繁奔波，簽約後會請您授權建商代刻一枚『專用印章』。請放心，這枚印章嚴格限定僅能使用於契約列出的 12 類都更行政文件（如：建照申請、都更同意書、信託指示、產權登記、水電申請等），建商嚴禁擅自移作其他用途。若有違背授權導致地主權益受損，建商依法須負擔全部的法律與賠償責任，您的權益絕對受到保障。<span class="cite">參照契約第 10 條第 7 項</span></p></div></details>
-    <details><summary>如果我沒有配合用印或交文件，會怎樣？</summary><div class="inner"><p>改建需要全體住戶一起齊心推進。為了不影響大家的進度，若您一時太忙忘記交文件，我們會先派專人溫馨提醒，並給予充裕的補件時間（收到通知後 15 天內；若來不及，書面催告後會再給 15 天）。只有在長久未配合、嚴重影響到全體鄰居權益的極端情況下，才會有依約按日計算延遲責任的機制。專人團隊都會隨時在旁協助您處理文件，請不用太過擔心。</p></div></details>
-    <details><summary>我的分回明細在哪裡看？</summary><div class="inner"><p>在您的合建契約附件一「分配試算」。歡迎預約專人說明。</p></div></details>
+    <details><summary data-audio="faq-01">改建過程中，地主需要自己出錢嗎？</summary><div class="inner"><p><b>興建費用完全不用掏錢！營造成本由建商全額負擔。</b></p><p>蓋新房子最昂貴的「建築規劃、設計與工程營造費用」，全數由吉美建設負責負擔，地主完全不需要掏錢出興建費。</p><p>主要有以下幾類屬於「個人資產或選擇性項目」會由地主自行處理，每一筆明細均公開透明：</p><ol class="plain"><li><b>個人專屬稅費與登記規費：</b>如產權登記規費、代書費，以及依法應由地主負擔之個人稅捐（政府都更稅費減免優惠，均由建商免費代為申辦）。</li><li><b>自願選大坪數之找補款：</b>若您選屋時實際選擇的坪數超過應分回坪數（以不超過 10% 為原則），才需就多選的坪數支付差額找補款；反之，若選擇的坪數少於應分坪數，則由建商找補差額給您。</li><li><b>個人客變追加費用：</b>若您主動提出室內隔間或配備的客製化變更（客變），僅針對您要求的追加工程部分辦理找補。</li><li><b>交屋後的社區費用：</b>新大樓的管理基金、管理費及水電費，依分得房屋比例分擔，與一般新成屋相同。</li></ol><p class="cite" style="white-space:normal">參照契約第 3 條第 2 項、第 4 條第 5 項、第 7 條、第 8 條第 2 項</p></div></details>
+    <details><summary data-audio="faq-02">物價上漲，我分回的會變少嗎？</summary><div class="inner"><p>不會。從簽約到交屋，雙方都不能以物價、工資、建材漲跌要求改分配比例，建商也不能以此延誤交屋；政府法令與不可抗力除外。<span class="cite">契約第 4 條第 9 項</span></p></div></details>
+    <details><summary data-audio="faq-03">為什麼高樓層是建商分？</summary><div class="inner"><p>分配是看「價值」不是看樓層。您的分回價值是固定的，在地主分配範圍內（約 2 至 9 樓）選高一點的樓層，坪數就少一點；選低一點，坪數就多一點。</p></div></details>
+    <details><summary data-audio="faq-04">如果有鄰居不簽，怎麼辦？</summary><div class="inner"><p>推動都市更新是一段建立共識的過程。當鄰居對於參與合建有疑慮時，我們的原則是「主動溝通、務實協助」。</p><p>除了透過說明會釐清大家的共通問題外，針對個別住戶在搬遷、稅務或產權上的特殊困境，團隊也會提供客製化的諮詢與行政協助，以誠意與專業解答疑慮。只要能兼顧全體地主權益與計畫推進，我們願意花時間深入了解每一戶的需求，共同克服困難。</p></div></details>
+    <details><summary data-audio="faq-05">什麼時候可以搬回來？</summary><div class="inner"><p>預估工期將於建築設計定案後公布。從搬出去到通知交屋，每個月都有租金補貼。</p></div></details>
+    <details><summary data-audio="faq-06">我年紀大了，搬家怎麼辦？</summary><div class="inner"><p>每戶有 5 萬元搬遷補貼，每月另有租金補貼。搬遷時遇到的困難，歡迎和專人討論。</p></div></details>
+    <details><summary data-audio="faq-07">我的房子有貸款或抵押，可以參加嗎？</summary><div class="inner"><p><b>可以，完全不影響參加！</b>實務上多數房屋都有房貸，請您放心。本案推動時會辦理「不動產信託」，建設公司會全力協助您將現有貸款轉貸至本案的信託銀行，並於申請建造執照前由團隊協助完成抵押權整理與順暢對接，讓您不需煩惱繁複的銀行手續。</p><p class="cite" style="white-space:normal">相關轉貸或融資之本金、利息及規費依約由地主負擔，團隊會協助爭取良好的信託銀行條件。參照契約第 3 條第 3 項、第 6 條第 6 項。</p></div></details>
+    <details><summary data-audio="faq-08">房子還在出租中，到時候會不會來不及要租客搬走？</summary><div class="inner"><p><b>絕對來得及！</b>合約上寫的是收到通知後「3 個月內點交」，但我們實務上會在拆遷前半年就先通知您。您有非常充足的時間跟租客說明與處理租約，不用擔心被時間逼著跑。如果在寫租約提醒或處理退租有任何疑問，我們團隊隨時能給您建議！<span class="cite">契約第 10 條第 6 項</span></p></div></details>
+    <details><summary data-audio="faq-09">如果屋主過世，契約還有效嗎？</summary><div class="inner"><p>有效，契約效力及於繼承人。遺產稅、贈與稅及繼承問題由地主自行處理。<span class="cite">契約第 15 條、第 7 條</span></p></div></details>
+    <details><summary data-audio="faq-10">分回的房子可以賣嗎？</summary><div class="inner"><p>可以。取得使用執照前要賣，需委託建商共同委任的銷售公司，銷售費用自付。<span class="cite">契約第 10 條第 2 項</span></p></div></details>
+    <details><summary data-audio="faq-11">未來可以依照我的需求修改室內格局嗎？</summary><div class="inner"><p><b>可以的，我們提供專屬的「客戶變更（客變）」服務！</b>每個家庭對空間的需求都不盡相同。為配合建築工程進度與施工品質，客變設有固定的受理時間區段。請您完全放心，當客變期程到達時，我們的團隊會主動聯繫並通知您，為您預留充裕的時間與家人討論規劃！</p><p>在客變期間內，您可以提出格局或建材配備的微調需求，團隊會安排專業建築師為您進行結構安全與法令評估，經雙方確認可行後，全力協助您打造最貼合生活習慣的理想家園。</p><p>所有變更項目均會開立公開透明的追加減費用明細，經您充分評估滿意並簽署客變確認單後，再於一個月內辦理款項找補，流程清晰又安心！</p><p class="cite" style="white-space:normal">參照契約第 8 條第 2 項、第 4 條第 5 項</p></div></details>
+    <details><summary data-audio="faq-12">為什麼要授權建商刻印章？</summary><div class="inner"><p>都更過程中需要蓋章的政府文件非常多。為了不讓您和長輩為了一顆印章頻繁奔波，簽約後會請您授權建商代刻一枚『專用印章』。請放心，這枚印章嚴格限定僅能使用於契約列出的 12 類都更行政文件（如：建照申請、都更同意書、信託指示、產權登記、水電申請等），建商嚴禁擅自移作其他用途。若有違背授權導致地主權益受損，建商依法須負擔全部的法律與賠償責任，您的權益絕對受到保障。<span class="cite">參照契約第 10 條第 7 項</span></p></div></details>
+    <details><summary data-audio="faq-13">如果我沒有配合用印或交文件，會怎樣？</summary><div class="inner"><p>改建需要全體住戶一起齊心推進。為了不影響大家的進度，若您一時太忙忘記交文件，我們會先派專人溫馨提醒，並給予充裕的補件時間（收到通知後 15 天內；若來不及，書面催告後會再給 15 天）。只有在長久未配合、嚴重影響到全體鄰居權益的極端情況下，才會有依約按日計算延遲責任的機制。專人團隊都會隨時在旁協助您處理文件，請不用太過擔心。</p></div></details>
+    <details><summary data-audio="faq-14">我的分回明細在哪裡看？</summary><div class="inner"><p>在您的合建契約附件一「分配試算」。歡迎預約專人說明。</p></div></details>
   </div>
 </section>
 
@@ -666,6 +677,7 @@ a.planlink { display: block; }
     prev.hidden = i === 0; next.hidden = i === ids.length - 1;
     if (i > 0) { prev.href = '#' + ids[i - 1]; prev.textContent = '← ' + labels[ids[i - 1]]; }
     if (i < ids.length - 1) { next.href = '#' + ids[i + 1]; next.textContent = labels[ids[i + 1]] + ' →'; }
+    if (window.wzStopAudio) window.wzStopAudio();
     var target = anchor && document.getElementById(anchor);
     if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
   }
@@ -697,6 +709,63 @@ a.planlink { display: block; }
     setBrandH();
     try { localStorage.setItem('wz-big', on ? '1' : '0'); } catch (err) {}
   });
+})();
+
+// 語音朗讀：只有 audio/manifest.json 裡有的段落才顯示按鈕；沒有 manifest 就完全不出現。
+(function () {
+  var player = null, current = null, slow = false;
+  var slowbtn = document.getElementById('slowbtn');
+  function label(b, on) { b.textContent = on ? '■ 停' : '▶ 聽'; b.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  function stop() {
+    if (player) { player.pause(); player.removeAttribute('src'); player.load(); player = null; }
+    if (current) { label(current, false); current = null; }
+  }
+  window.wzStopAudio = stop;
+  function play(b, url) {
+    stop();
+    player = new Audio(url);
+    player.preload = 'none';
+    player.playbackRate = slow ? 0.85 : 1;
+    current = b; label(b, true);
+    player.addEventListener('ended', stop);
+    player.addEventListener('error', function () { stop(); b.disabled = true; b.textContent = '暫無語音'; });
+    var p = player.play();
+    if (p && p.catch) p.catch(function () { stop(); });
+  }
+  function setSlow(on) {
+    slow = on;
+    slowbtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    slowbtn.textContent = on ? '念正常速' : '念慢一點';
+    if (player) player.playbackRate = on ? 0.85 : 1;
+  }
+  fetch('audio/manifest.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (m) {
+    if (!m) return;
+    var count = 0;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-audio]'), function (el) {
+      var id = el.getAttribute('data-audio');
+      if (!m[id]) return;
+      var url = 'audio/' + id + '.mp3?v=' + m[id];
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'listen'; label(b, false);
+      b.setAttribute('aria-label', '播放語音說明');
+      b.addEventListener('click', function (e) {
+        e.preventDefault(); e.stopPropagation();
+        if (current === b) { stop(); return; }
+        var d = el.tagName === 'SUMMARY' && el.parentNode;
+        if (d && !d.open) d.open = true;
+        play(b, url);
+      });
+      el.appendChild(b); count++;
+    });
+    if (count) {
+      slowbtn.hidden = false;
+      try { setSlow(localStorage.getItem('wz-slow') === '1'); } catch (err) {}
+      slowbtn.addEventListener('click', function () {
+        setSlow(!slow);
+        try { localStorage.setItem('wz-slow', slow ? '1' : '0'); } catch (err) {}
+      });
+    }
+  }).catch(function () {});
 })();
 </script>
 
